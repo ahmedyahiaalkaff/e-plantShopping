@@ -252,7 +252,7 @@ function ProductList() {
     };
     const handleAddToCart = (plant) => {
         dispatch(addItem(plant));
-        setAddedToCart((prevState)=>({...prevState, [product.name]: true}));
+        setAddedToCart((prevState)=>({...prevState, [plant.name]: true}));
     }
     return (
         <div>
@@ -292,7 +292,7 @@ function ProductList() {
                                                         <img src={plant.image} alt={plant.name} className='product-image'/>
                                                         <p>{plant.description}</p>
                                                         <div className='product-price'>{plant.price}</div>
-                                                        <button className='product-button'>Add To Cart</button>
+                                                        <button className='product-button' onClick={()=>handleAddToCart(plant)}>Add To Cart</button>
                                                     </div>
                                                 )
                                             }
